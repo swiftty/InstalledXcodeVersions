@@ -1,0 +1,130 @@
+[
+  {
+    "link": "16.2",
+    "symlinks": null,
+    "sha256": "0e367d06eb7c334ea143bada5e4422f56688aabff571bedf0d2ad9434b7290de",
+    "version": "16.2",
+    "build": "16C5032a",
+    "info": {
+      "release": {
+        "release": true
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-16_2-release-notes",
+      "date": {
+        "day": 11,
+        "month": 12,
+        "year": 2024
+      }
+    }
+  },
+  {
+    "link": "16.1",
+    "symlinks": null,
+    "sha256": "8ca961d55981f983d21b99a95a6b0ac04905b837f6e11346ee86d28f12afe720",
+    "version": "16.1",
+    "build": "16B40",
+    "info": {
+      "release": {
+        "release": true
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-16_1-release-notes",
+      "date": {
+        "day": 28,
+        "month": 10,
+        "year": 2024
+      }
+    }
+  },
+  {
+    "link": "15.4",
+    "symlinks": null,
+    "sha256": "82d3d61804ff3f4c7c82085e91dc701037ddaa770e542848b2477e22f4e8aa7a",
+    "version": "15.4.0",
+    "build": "15F31d",
+    "info": {
+      "release": {
+        "release": true
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-15_4-release-notes",
+      "date": {
+        "day": 13,
+        "month": 5,
+        "year": 2024
+      }
+    }
+  },
+  {
+    "link": "15.3",
+    "symlinks": null,
+    "sha256": "f13f6a2e2df432c3008e394640b8549a18c285acd7fd148d6c4bac8c3a5af234",
+    "version": "15.3.0",
+    "build": "15E204a",
+    "info": {
+      "release": {
+        "release": true
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-15_3-release-notes",
+      "date": {
+        "day": 5,
+        "month": 3,
+        "year": 2024
+      }
+    }
+  },
+  {
+    "link": "15.2",
+    "symlinks": null,
+    "sha256": "04E93680C6DDBEC84666531BE412DE778AFC8EAC6AB2037F4C2BE7290818B59B",
+    "version": "15.2.0",
+    "build": "15C500b",
+    "info": {
+      "release": {
+        "release": true
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-15_2-release-notes",
+      "date": {
+        "day": 8,
+        "month": 1,
+        "year": 2024
+      }
+    }
+  },
+  {
+    "link": "15.1",
+    "symlinks": null,
+    "sha256": "857D8DB537BAC82BF99DE0E1D3895D214D4D02101C1340CEF3DAF6E821BA1D05",
+    "version": "15.1.0",
+    "build": "15C65",
+    "info": {
+      "release": {
+        "release": true
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-15_1-release-notes",
+      "date": {
+        "day": 11,
+        "month": 12,
+        "year": 2023
+      }
+    }
+  },
+  {
+    "link": "15.0.1",
+    "symlinks": [
+      "15.0"
+    ],
+    "sha256": "5AC17AE6060CAFC3C7112C6DA0B153450BE21F1DE6632777FBA9FBC9D999C9E8",
+    "version": "15.0.1",
+    "build": "15A507",
+    "info": {
+      "release": {
+        "release": true
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-15_0_1-release-notes",
+      "date": {
+        "day": 18,
+        "month": 10,
+        "year": 2023
+      }
+    }
+  }
+]

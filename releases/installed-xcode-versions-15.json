@@ -1,0 +1,170 @@
+[
+  {
+    "link": "26.3",
+    "symlinks": null,
+    "sha256": "cf87232e0419785170edcfa070b750f28808ec00b489ab540c08b7d197c79ae4",
+    "version": "26.3",
+    "build": "17C529",
+    "info": {
+      "release": {
+        "release": true
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes",
+      "date": {
+        "day": 26,
+        "month": 2,
+        "year": 2026
+      }
+    }
+  },
+  {
+    "link": "26.2",
+    "symlinks": null,
+    "sha256": "8f29ab6a9ac6670d3cf53545ffdb1c317d11607fa8db38fc56d3391df7783fbd",
+    "version": "26.2",
+    "build": "17C52",
+    "info": {
+      "release": {
+        "release": true
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-26_2-release-notes",
+      "date": {
+        "day": 12,
+        "month": 12,
+        "year": 2025
+      }
+    }
+  },
+  {
+    "link": "26.1.1",
+    "symlinks": [
+      "26.1"
+    ],
+    "sha256": "ed55d55fa28455c11a65e0809ba8fdf7d83fdeb268aabf9af7fcc1ee911543eb",
+    "version": "26.1.1",
+    "build": "17B100",
+    "info": {
+      "release": {
+        "release": true
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-26_1-release-notes",
+      "date": {
+        "day": 11,
+        "month": 11,
+        "year": 2025
+      }
+    }
+  },
+  {
+    "link": "26.0.1",
+    "symlinks": [
+      "26.0"
+    ],
+    "sha256": "9881c457068c86ac91e94cca2d7116dfd01cb7179c22b0863b63c7f3bb7e7695",
+    "version": "26.0.1",
+    "build": "17A400",
+    "info": {
+      "release": {
+        "release": true
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-26_0_1-release-notes",
+      "date": {
+        "day": 22,
+        "month": 9,
+        "year": 2025
+      }
+    }
+  },
+  {
+    "link": "16.4",
+    "symlinks": null,
+    "sha256": "2dbf65ba28fb85b34e72c14c529a42d5c3189ab0f11fb29fdebd5f4ee6c87900",
+    "version": "16.4.0",
+    "build": "16F6",
+    "info": {
+      "release": {
+        "release": true
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-16_4-release-notes",
+      "date": {
+        "day": 27,
+        "month": 5,
+        "year": 2025
+      }
+    }
+  },
+  {
+    "link": "16.3",
+    "symlinks": null,
+    "sha256": "c593177b73e45f31e1cf7ced131760d8aa8e1532f5bbf8ba11a4ded01da14fbb",
+    "version": "16.3",
+    "build": "16E140",
+    "info": {
+      "release": {
+        "release": true
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-16_3-release-notes",
+      "date": {
+        "day": 31,
+        "month": 3,
+        "year": 2025
+      }
+    }
+  },
+  {
+    "link": "16.2",
+    "symlinks": null,
+    "sha256": "0e367d06eb7c334ea143bada5e4422f56688aabff571bedf0d2ad9434b7290de",
+    "version": "16.2",
+    "build": "16C5032a",
+    "info": {
+      "release": {
+        "release": true
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-16_2-release-notes",
+      "date": {
+        "day": 11,
+        "month": 12,
+        "year": 2024
+      }
+    }
+  },
+  {
+    "link": "16.1",
+    "symlinks": null,
+    "sha256": "8ca961d55981f983d21b99a95a6b0ac04905b837f6e11346ee86d28f12afe720",
+    "version": "16.1",
+    "build": "16B40",
+    "info": {
+      "release": {
+        "release": true
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-16_1-release-notes",
+      "date": {
+        "day": 28,
+        "month": 10,
+        "year": 2024
+      }
+    }
+  },
+  {
+    "link": "16",
+    "symlinks": [
+      "16.0"
+    ],
+    "sha256": "4a26c3d102a55c7222fb145e0ee1503249c9c26c6e02dc64d783c8810b37b1e3",
+    "version": "16.0.0",
+    "build": "16A242d",
+    "info": {
+      "release": {
+        "release": true
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes",
+      "date": {
+        "day": 16,
+        "month": 9,
+        "year": 2024
+      }
+    }
+  }
+]
