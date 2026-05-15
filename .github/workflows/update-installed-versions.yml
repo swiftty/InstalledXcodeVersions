@@ -1,0 +1,51 @@
+name: update-installed-versions
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 */3 * *"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+      - name: Git settings
+        shell: bash
+        run: |
+          # https://qiita.com/thaim/items/3d1a4d09ec4a7d8844ce
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Fetch tags
+        run: ./scripts/fetch-tags
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: ./.github/actions/detect-changes
+        id: tag_changes
+        with:
+          path: macos-image-tags.json
+      - if: steps.tag_changes.outputs.changed == 'true'
+        name: Generate installed versions
+        run: ./scripts/generate-xcode-versions
+      - uses: ./.github/actions/detect-changes
+        id: installed_changes
+        with:
+          path: releases/*
+      - if: steps.installed_changes.outputs.changed == 'true'
+        name: Commit changes
+        run: |
+          details=$(
+            cat macos-image-tags.json | jq -r '
+              .[]
+              | "- \(.tag_name)\n  \(.html_url)"
+            '
+          )
+
+          git add -u
+          git add releases
+          git commit \
+            -m "Update installed versions [skip ci]" \
+            -m "$details"
+          git push origin HEAD

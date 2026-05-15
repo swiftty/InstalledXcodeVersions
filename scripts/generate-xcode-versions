@@ -1,0 +1,103 @@
+#!/bin/sh
+
+set -eu
+
+json=$(cat macos-image-tags.json)
+releases_info=$(
+  curl -s "https://xcodereleases.com/data.json" \
+    | jq '
+      map({
+        name,
+        version,
+        date,
+        release_note_url: .links.notes.url,
+        _versionOrder
+      })
+      | unique_by([.version.number, .version.build])
+      | sort_by(._versionOrder)
+      | reverse
+    '
+)
+
+if [ "$(printf '%s\n' "$json" | jq 'length')" -eq 0 ]; then
+  echo "No releases"
+  exit 0
+fi
+
+process_release() {
+  local tag_name="$1"
+  version=$(
+    jq -nr --arg tag "$tag_name" '
+      $tag
+      | capture("^macos-(?<version>[0-9]+)-arm64/")
+      | .version
+    '
+  )
+
+  echo "fetch toolsset for $tag_name, $version"
+  installed_versions=$(
+    curl -s "https://raw.githubusercontent.com/actions/runner-images/refs/tags/$tag_name/images/macos/toolsets/toolset-$version.json" \
+      | jq '
+        .xcode.arm64.versions
+        | map({
+          link,
+          symlinks,
+          sha256
+        } + (
+          .version
+          | capture("^(?<version>[^+]+)\\+(?<build>.+)$")
+        ))
+      '
+  )
+
+  installed_versions_file=$(mktemp)
+  releases_info_file=$(mktemp)
+
+  printf '%s\n' "$installed_versions" > "$installed_versions_file"
+  printf '%s\n' "$releases_info" > "$releases_info_file"
+
+  result=$(
+    jq -n \
+      --slurpfile installed_versions "$installed_versions_file" \
+      --slurpfile releases_info "$releases_info_file" \
+      '
+        def normalize_version:
+          if test("^[0-9]+\\.[0-9]+\\.0$")
+            then sub("\\.0$"; "")
+          else .
+          end;
+
+        $installed_versions[0]
+        | map(
+            . as $base
+            | $base + {
+                info: (
+                  $releases_info[0]
+                  | map(
+                      select(
+                        (.version.number | normalize_version) == ($base.version | normalize_version) and
+                        .version.build == $base.build
+                      )
+                      | {
+                          release: .version.release,
+                          release_note_url,
+                          date
+                        }
+                    )
+                  | first?
+                )
+              }
+          )
+      '
+  )
+
+  printf '%s\n' "$result" > "releases/installed-xcode-versions-$version.json"
+}
+
+printf '%s\n' "$json" \
+| jq -c '.[]' \
+| while read -r release; do
+    tag_name=$(printf '%s\n' "$release" | jq -r '.tag_name')
+
+    process_release "$tag_name"
+  done

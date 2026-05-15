@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -eu
+
+gh api repos/actions/runner-images/releases --jq '
+[
+  .[]
+  | select(.prerelease == false and .draft == false)
+  | select(.tag_name | contains("macos"))
+  | select(.tag_name | contains("arm64"))
+  | if (.tag_name | test("^macos-[0-9]+-arm64/[^/]+$"))
+      then .
+      else error("invalid tag format: \(.tag_name)")
+    end
+]
+| unique_by(.tag_name | split("/")[0])
+| sort_by(.tag_name)
+| reverse
+| map({ tag_name, html_url, name })
+' | jq . > macos-image-tags.json
