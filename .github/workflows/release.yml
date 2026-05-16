@@ -1,0 +1,35 @@
+name: release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: choice
+        description: "patch | minor | major"
+        required: true
+        options:
+          - patch
+          - minor
+          - major
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v6
+      - uses: swiftty/nextversion@v0.0.1
+        id: nextversion
+        with:
+          bump: ${{ github.event.inputs.version }}
+      - name: git settings
+        run: |
+          # https://qiita.com/thaim/items/3d1a4d09ec4a7d8844ce
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - uses: softprops/action-gh-release@v3
+        with:
+          generate_release_notes: true
+          tag_name: ${{ steps.nextversion.outputs.next }}
