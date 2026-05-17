@@ -39,6 +39,7 @@ jobs:
         with:
           path: releases/*
       - if: steps.installed_changes.outputs.changed == 'true'
+        id: commit_changes
         name: Commit changes
         run: |
           details=$(
@@ -54,3 +55,13 @@ jobs:
             -m "Update installed versions [skip ci]" \
             -m "$details"
           git push origin HEAD
+      - if: steps.commit_changes.outcome == 'success'
+        id: nextversion
+        uses: swiftty/nextversion@v0.0.1
+        with:
+          bump: "minor"
+      - if: steps.nextversion.outcome == 'success'
+        uses: softprops/action-gh-release@v3
+        with:
+          generate_release_notes: true
+          tag_name: ${{ steps.nextversion.outputs.next }}
