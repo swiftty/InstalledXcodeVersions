@@ -1,20 +1,18 @@
 [
   {
-    "link": "26.5_beta_2",
-    "symlinks": [
-      "26.5"
-    ],
-    "sha256": "4e08f652cf56fe32d209f55d64f1ec71c20c8acfeb92898a21215ca71e17ff7d",
+    "link": "26.5",
+    "symlinks": null,
+    "sha256": "49541f9381551936bd5ab95432337eb1040505edcf5c65a59f39e5cf95fc22c5",
     "version": "26.5",
-    "build": "17F5022i",
+    "build": "17F42",
     "info": {
       "release": {
-        "beta": 2
+        "release": true
       },
       "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-26_5-release-notes",
       "date": {
-        "day": 13,
-        "month": 4,
+        "day": 11,
+        "month": 5,
         "year": 2026
       }
     }
