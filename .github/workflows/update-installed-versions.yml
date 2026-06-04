@@ -27,21 +27,6 @@ jobs:
         with:
           path: macos-image-tags.json
       - if: steps.tag_changes.outputs.changed == 'true'
-        name: Commit changes
-        run: |
-          details=$(
-            cat macos-image-tags.json | jq -r '
-              .[]
-              | "- \(.tag_name)\n  \(.html_url)"
-            '
-          )
-
-          git add -u
-          git commit \
-            -m "Update tags json [skip ci]" \
-            -m "$details"
-          git push origin HEAD
-      - if: steps.tag_changes.outputs.changed == 'true'
         name: Generate installed versions
         run: |
           # Clean before generating installed lists.
