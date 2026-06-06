@@ -25,7 +25,7 @@ jobs:
       - uses: ./.github/actions/detect-changes
         id: tag_changes
         with:
-          paths: macos-image-tags.json
+          path: macos-image-tags.json
       - if: steps.tag_changes.outputs.changed == 'true'
         name: Generate installed versions
         run: |
@@ -35,12 +35,10 @@ jobs:
 
           ./scripts/generate-xcode-versions
       - uses: ./.github/actions/detect-changes
-        id: any_changes
+        id: installed_changes
         with:
-          paths: |
-            macos-image-tags.json
-            releases/*
-      - if: steps.any_changes.outputs.changed == 'true'
+          path: releases/*
+      - if: steps.tag_changes.outputs.changed == 'true' || steps.installed_changes.outputs.changed == 'true'
         id: commit_changes
         name: Commit changes
         run: |
@@ -57,7 +55,7 @@ jobs:
             -m "Update installed versions [skip ci]" \
             -m "$details"
           git push origin HEAD
-      - if: steps.commit_changes.outcome == 'success'
+      - if: steps.commit_changes.outcome == 'success' && steps.installed_changes.outputs.changed == 'true'
         id: nextversion
         uses: swiftty/nextversion@v0.0.1
         with:

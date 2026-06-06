@@ -2,8 +2,8 @@ name: Detect Changes
 description: Detect file changes and expose result as output
 
 inputs:
-  paths:
-    description: Target file paths
+  path:
+    description: Target file path
     required: true
 
 outputs:
@@ -17,9 +17,7 @@ runs:
     - id: detect
       shell: bash
       run: |
-        mapfile -t paths <<< "${{ inputs.paths }}"
-
-        if [[ -n "$(git status --porcelain -- "${paths[@]}")" ]]; then
+        if [[ -n "$(git status --porcelain -- "${{ inputs.path }}")" ]]; then
           echo "changed=true" >> "$GITHUB_OUTPUT"
         else
           echo "changed=false" >> "$GITHUB_OUTPUT"
