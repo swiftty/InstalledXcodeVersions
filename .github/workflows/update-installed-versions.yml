@@ -25,7 +25,7 @@ jobs:
       - uses: ./.github/actions/detect-changes
         id: tag_changes
         with:
-          path: macos-image-tags.json
+          paths: macos-image-tags.json
       - if: steps.tag_changes.outputs.changed == 'true'
         name: Generate installed versions
         run: |
@@ -35,10 +35,12 @@ jobs:
 
           ./scripts/generate-xcode-versions
       - uses: ./.github/actions/detect-changes
-        id: installed_changes
+        id: any_changes
         with:
-          path: releases/*
-      - if: steps.installed_changes.outputs.changed == 'true'
+          paths: |
+            macos-image-tags.json
+            releases/*
+      - if: steps.any_changes.outputs.changed == 'true'
         id: commit_changes
         name: Commit changes
         run: |
