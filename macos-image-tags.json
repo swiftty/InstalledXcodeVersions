@@ -10,8 +10,8 @@
     "tag_name": "macos-15-arm64/20260527.0100"
   },
   {
-    "html_url": "https://github.com/actions/runner-images/releases/tag/macos-14-arm64/20260525.0091",
-    "name": "macos-14-arm64 (20260525) Image Update",
-    "tag_name": "macos-14-arm64/20260525.0091"
+    "html_url": "https://github.com/actions/runner-images/releases/tag/macos-14-arm64/20260608.0118",
+    "name": "macos-14-arm64 (20260608) Image Update",
+    "tag_name": "macos-14-arm64/20260608.0118"
   }
 ]
