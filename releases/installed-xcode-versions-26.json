@@ -1,5 +1,25 @@
 [
   {
+    "link": "26.6_Release_Candidate_2",
+    "symlinks": [
+      "26.6"
+    ],
+    "sha256": "3f7e2985a080d6166f178034a76a7e7a24e5e64a31f36772f9a3f55e27c94591",
+    "version": "26.6",
+    "build": "17F113",
+    "info": {
+      "release": {
+        "release": true
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-26_6-release-notes",
+      "date": {
+        "day": 25,
+        "month": 6,
+        "year": 2026
+      }
+    }
+  },
+  {
     "link": "26.5",
     "symlinks": null,
     "sha256": "49541f9381551936bd5ab95432337eb1040505edcf5c65a59f39e5cf95fc22c5",
