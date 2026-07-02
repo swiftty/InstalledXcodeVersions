@@ -3,7 +3,7 @@
 set -eu
 
 tags="$(
-  gh api repos/actions/runner-images/releases?per_page=50 --jq '
+  gh api 'repos/actions/runner-images/releases?per_page=100' --jq '
   [
     .[]
     | select(.prerelease == false and .draft == false)
