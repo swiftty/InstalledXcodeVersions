@@ -1,9 +1,7 @@
 [
   {
-    "link": "26.6_Release_Candidate_2",
-    "symlinks": [
-      "26.6"
-    ],
+    "link": "26.6",
+    "symlinks": null,
     "sha256": "3f7e2985a080d6166f178034a76a7e7a24e5e64a31f36772f9a3f55e27c94591",
     "version": "26.6",
     "build": "17F113",
