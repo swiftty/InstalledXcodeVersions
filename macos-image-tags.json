@@ -5,9 +5,9 @@
     "tag_name": "macos-26-arm64/20260630.0213"
   },
   {
-    "html_url": "https://github.com/actions/runner-images/releases/tag/macos-15-arm64/20260630.0202",
-    "name": "macos-15-arm64 (20260630) Image Update",
-    "tag_name": "macos-15-arm64/20260630.0202"
+    "html_url": "https://github.com/actions/runner-images/releases/tag/macos-15-arm64/20260706.0213",
+    "name": "macos-15-arm64 (20260706) Image Update",
+    "tag_name": "macos-15-arm64/20260706.0213"
   },
   {
     "html_url": "https://github.com/actions/runner-images/releases/tag/macos-14-arm64/20260629.0180",
