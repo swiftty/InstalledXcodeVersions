@@ -31,17 +31,33 @@ fi
 
 process_release() {
   local tag_name="$1"
-  version=$(
+  image_name=$(
     jq -nr --arg tag "$tag_name" '
       $tag
-      | capture("^macos-(?<version>[0-9]+)-arm64/")
-      | .version
+      | sub("-arm64"; "")
+      | sub("/.*$"; "")
     '
   )
 
+  type_and_version=$(
+    jq -nr --arg image_name "$image_name" '
+      $image_name
+      | capture("^(?<type>[^-]+)-(?<version>[0-9]+)(?:-arm64)?")
+    '
+  )
+
+  type=$(_cat "$type_and_version" | jq -r '.type')
+  version=$(_cat "$type_and_version" | jq -r '.version')
+
   echo "fetch toolsset for $tag_name, $version"
+  if [[ $type == macos ]]; then
+    toolset_path="toolset-$version.json"
+  else
+    toolset_path="toolset-$image_name.json"
+  fi
+
   installed_versions=$(
-    curl -s "https://raw.githubusercontent.com/actions/runner-images/refs/tags/$tag_name/images/macos/toolsets/toolset-$version.json" \
+    curl -s "https://raw.githubusercontent.com/actions/runner-images/refs/tags/$tag_name/images/macos/toolsets/$toolset_path" \
       | jq '
         .xcode.arm64.versions
         | map({
@@ -96,7 +112,7 @@ process_release() {
       '
   )
 
-  _cat "$result" > "releases/installed-xcode-versions-$version.json"
+  _cat "$result" > "releases/installed-xcode-versions-$image_name.json"
 }
 
 _cat "$json" \
