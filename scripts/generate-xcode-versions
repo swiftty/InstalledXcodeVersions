@@ -2,6 +2,11 @@
 
 set -eu
 
+_cat() {
+  local file="$1"
+  printf '%s\n' "$file"
+}
+
 json=$(cat macos-image-tags.json)
 releases_info=$(
   curl -s "https://xcodereleases.com/data.json" \
@@ -19,7 +24,7 @@ releases_info=$(
     '
 )
 
-if [ "$(printf '%s\n' "$json" | jq 'length')" -eq 0 ]; then
+if [ "$(_cat "$json" | jq 'length')" -eq 0 ]; then
   echo "No releases"
   exit 0
 fi
@@ -53,8 +58,8 @@ process_release() {
   installed_versions_file=$(mktemp)
   releases_info_file=$(mktemp)
 
-  printf '%s\n' "$installed_versions" > "$installed_versions_file"
-  printf '%s\n' "$releases_info" > "$releases_info_file"
+  _cat "$installed_versions" > "$installed_versions_file"
+  _cat "$releases_info" > "$releases_info_file"
 
   result=$(
     jq -n \
@@ -91,13 +96,13 @@ process_release() {
       '
   )
 
-  printf '%s\n' "$result" > "releases/installed-xcode-versions-$version.json"
+  _cat "$result" > "releases/installed-xcode-versions-$version.json"
 }
 
-printf '%s\n' "$json" \
+_cat "$json" \
 | jq -c '.[]' \
 | while read -r release; do
-    tag_name=$(printf '%s\n' "$release" | jq -r '.tag_name')
+    tag_name=$(_cat "$release" | jq -r '.tag_name')
 
     process_release "$tag_name"
   done
