@@ -7,9 +7,8 @@ tags="$(
   [
     .[]
     | select(.prerelease == false and .draft == false)
-    | select(.tag_name | contains("macos"))
-    | select(.tag_name | contains("arm64"))
-    | if (.tag_name | test("^macos-[0-9]+-arm64/.+$"))
+    | select(.tag_name | (contains("macos") and contains("arm64")) or contains("xcode"))
+    | if (.tag_name | test("^macos-[0-9]+-arm64/.+$") or test("^xcode-[0-9]+/.+$"))
         then .
         else error("invalid tag format: \(.tag_name)")
       end
@@ -19,7 +18,7 @@ tags="$(
   | reverse
   | map({ tag_name, html_url, name })
   | if length == 0
-      then error("no macOS arm64 image tags found")
+      then error("no macOS arm64 or Xcode image tags found")
       else .
     end
   '
