@@ -50,7 +50,7 @@ process_release() {
   version=$(_cat "$type_and_version" | jq -r '.version')
 
   echo "fetch toolsset for $tag_name, $version"
-  if [[ $type == macos ]]; then
+  if [ "$type" = "macos" ]; then
     toolset_path="toolset-$version.json"
   else
     toolset_path="toolset-$image_name.json"
