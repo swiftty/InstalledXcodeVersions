@@ -1,18 +1,18 @@
 [
   {
-    "html_url": "https://github.com/actions/runner-images/releases/tag/xcode-27/20260720.0045",
-    "name": "xcode-27 (20260720) Image Update",
-    "tag_name": "xcode-27/20260720.0045"
+    "html_url": "https://github.com/actions/runner-images/releases/tag/xcode-27/20260728.0060",
+    "name": "xcode-27 (20260728) Image Update",
+    "tag_name": "xcode-27/20260728.0060"
   },
   {
-    "html_url": "https://github.com/actions/runner-images/releases/tag/macos-26-arm64/20260720.0258",
-    "name": "macos-26-arm64 (20260720) Image Update",
-    "tag_name": "macos-26-arm64/20260720.0258"
+    "html_url": "https://github.com/actions/runner-images/releases/tag/macos-26-arm64/20260728.0273",
+    "name": "macos-26-arm64 (20260728) Image Update",
+    "tag_name": "macos-26-arm64/20260728.0273"
   },
   {
-    "html_url": "https://github.com/actions/runner-images/releases/tag/macos-15-arm64/20260715.0234",
-    "name": "macos-15-arm64 (20260715) Image Update",
-    "tag_name": "macos-15-arm64/20260715.0234"
+    "html_url": "https://github.com/actions/runner-images/releases/tag/macos-15-arm64/20260727.0256",
+    "name": "macos-15-arm64 (20260727) Image Update",
+    "tag_name": "macos-15-arm64/20260727.0256"
   },
   {
     "html_url": "https://github.com/actions/runner-images/releases/tag/macos-14-arm64/20260629.0180",
