@@ -7,8 +7,8 @@ tags="$(
   [
     .[]
     | select(.prerelease == false and .draft == false)
-    | select(.tag_name | (contains("macos") and contains("arm64")) or contains("xcode"))
-    | if (.tag_name | test("^macos-[0-9]+-arm64/.+$") or test("^xcode-[0-9]+/.+$"))
+    | select(.tag_name | (contains("macos") and contains("arm64")) or (contains("xcode") and contains("arm64")))
+    | if (.tag_name | test("^macos-[0-9]+-arm64/.+$") or test("^xcode-[0-9]+-arm64/.+$"))
         then .
         else error("invalid tag format: \(.tag_name)")
       end
