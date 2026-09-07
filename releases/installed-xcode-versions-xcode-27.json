@@ -1,20 +1,20 @@
 [
   {
-    "link": "27_beta_4",
+    "link": "27_beta_6",
     "symlinks": [
       "27.0"
     ],
-    "sha256": "808582beef282213b3a5a1132338ea7f866010a819543fcc91ab12f24c15919d",
+    "sha256": "126b0587e75a96e4cb446403a542e55662690930ab67f6cc21254abcd32a08d6",
     "version": "27.0",
-    "build": "27A5228h",
+    "build": "27A5252f",
     "info": {
       "release": {
-        "beta": 4
+        "beta": 6
       },
       "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-27-release-notes",
       "date": {
-        "day": 20,
-        "month": 7,
+        "day": 24,
+        "month": 8,
         "year": 2026
       }
     }
