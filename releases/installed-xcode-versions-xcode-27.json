@@ -1,6 +1,46 @@
 [
   {
-    "link": "27_Release_Candidate",
+    "link": "27.2_beta",
+    "symlinks": [
+      "27.2"
+    ],
+    "sha256": "b2d396f5fc1a109e4d74874093575f5b3c1044a6cc05ef2b3ca27c738d90442b",
+    "version": "27.2",
+    "build": "27B5019j",
+    "info": {
+      "release": {
+        "beta": 1
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-27_2-release-notes",
+      "date": {
+        "day": 16,
+        "month": 9,
+        "year": 2026
+      }
+    }
+  },
+  {
+    "link": "27.1_beta",
+    "symlinks": [
+      "27.1"
+    ],
+    "sha256": "7e90e1757f490f163e01d5262baa5db5c9d64c63d9f42450eeface0749f086fe",
+    "version": "27.1",
+    "build": "27A9269",
+    "info": {
+      "release": {
+        "beta": 1
+      },
+      "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-27_1-release-notes",
+      "date": {
+        "day": 18,
+        "month": 9,
+        "year": 2026
+      }
+    }
+  },
+  {
+    "link": "27",
     "symlinks": [
       "27.0"
     ],
