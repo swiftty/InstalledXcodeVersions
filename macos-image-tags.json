@@ -1,8 +1,8 @@
 [
   {
-    "html_url": "https://github.com/actions/runner-images/releases/tag/xcode-27-arm64/20261012.0260",
-    "name": "xcode-27-arm64 (20261012) Image Update",
-    "tag_name": "xcode-27-arm64/20261012.0260"
+    "html_url": "https://github.com/actions/runner-images/releases/tag/xcode-27-arm64/20261023.0307",
+    "name": "xcode-27-arm64 (20261023) Image Update",
+    "tag_name": "xcode-27-arm64/20261023.0307"
   },
   {
     "html_url": "https://github.com/actions/runner-images/releases/tag/macos-26-arm64/20261013.0424",
