@@ -1,19 +1,17 @@
 [
   {
-    "link": "27.2_Release_Candidate",
-    "symlinks": [
-      "27.2"
-    ],
-    "sha256": "aab47159fa56c8521b0535d5231efc70d330dd4819513c8266a0cf3eceacc425",
+    "link": "27.2",
+    "symlinks": null,
+    "sha256": "c28b05526225394fa4017d7f9919c1c898822713edca68872cb4701599f01978",
     "version": "27.2",
-    "build": "27B48",
+    "build": "27B52",
     "info": {
       "release": {
-        "rc": 1
+        "release": true
       },
       "release_note_url": "https://developer.apple.com/documentation/xcode-release-notes/xcode-27_2-release-notes",
       "date": {
-        "day": 19,
+        "day": 29,
         "month": 10,
         "year": 2026
       }
